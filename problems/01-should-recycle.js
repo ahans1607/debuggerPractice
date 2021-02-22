@@ -1,5 +1,4 @@
 /*
-
 Fix the function `shouldRecycle` that determines if the item passed in can
 or cannot be recycled.
 
@@ -9,18 +8,19 @@ recycled.`
 
 If an item is made of aluminum or paper then it can be recycled and should
 return `Recycle Me!`
-
 */
-
-
 function shouldRecycle(item) {
-  if (!item.plastic) {
+  if (item.plastic && item.color !== "black") {
+    
     return 'Recycle Me!'
-  } else if (item.color === 'black') {
+  } else if (item.plastic && item.color === 'black') {
+    
     return 'Currently, cannot be recycled.'
   } else if (item.aluminum) {
+    
     return 'Recycle Me!'
   } else if (item.paper) {
+    
     return 'Recycle Me!'
   }
   return 'Cannot be recycled'
